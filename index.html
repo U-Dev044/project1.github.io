@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRLINE</title>
+    <link rel="stylesheet" href="airline.css">
+</head>
+<body>
+     <h1>Flight Booking</h1>
+     <form id="bookingform" action="#" method="post">
+        <label for="from">From:</label>
+        <input type="text" id="from" name="from" required>
+        <label for="to">To:</label>
+        <input type="text" id="to" name="to" required>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" required>
+        <label for="passengers">Passengers:</label>
+        <input type="number" id="passengers" name="passengers" required>
+        <input type="submit" value="Search Flight">
+     </form>
+     <div id="results"></div>
+
+
+    <script src="airline.js"></script>
+</body>
+</html>

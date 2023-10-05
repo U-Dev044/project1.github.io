@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flight.css">
+    <title>Orcha Airline</title>
+</head>
+
+<body>
+    <h1>Orcha Airline</h1>
+    <form id="bookingForm" class="bookingform">
+
+        <label for="departureAirport">DepartureAirport:</label> <br>
+        <input class="inputstyle" type="text" id="departureAirport" required>
+        <br>
+
+        <label for="destinationAirport">DestinationAirport:</label> <br>
+        <input class="inputstyle" type="text" id="destinationAirport" required>
+        <br>
+
+        <label for="travelDate">Travel Date:</label><br>
+        <input class="inputstyle" type="date" id="travelDate" required>
+        <br>
+
+        <label for="passengerName">Passenger Name:</label>
+        <br>
+        <input class="inputstyle" type="text" id="passengerName" required>
+        <br>
+        <input class="inputstyle" id="button" type="button" value="Submit" onclick="flightForm()">
+
+    </form>
+
+    <div id="receipt" class="receipt" style="display: none">
+        <h2>Receipt</h2>
+        <p id="departureInfo"></p>
+        <p id="destinationInfo"></p>
+        <p id="travelDateInfo"></p>
+        <p id="passengerInfo"></p>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-image: url(./IMG-20230621-WA0003.jpg);
+            backdrop-filter: blur(5px);
+            width: 100%;
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .bookingform {
+            background: rgba(63, 62, 62, 0.459);
+            padding: 80px;
+            padding-left: 140px;
+            width: 20%;
+            border-radius: 50px;
+            margin-left: 31%;
+            box-shadow: 5px 5px 5px rgba(82, 81, 81, 0.801);
+        }
+
+        input {
+            margin-top: 10px;
+            margin-bottom: 20;
+        }
+
+        .inputstyle {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            border-radius: 5px;
+            border: none;
+            padding: 5px 10px 5px 10px;
+            font-size: 15px;
+
+        }
+
+        #button {
+            margin-left: 50px;
+            margin-top: 30px;
+            padding: 15px;
+            color: rgb(255, 94, 0);
+            font-weight: bold;
+            font-family: cursive;
+            transition: 0.5s;
+        }
+
+        #button:hover {
+            transition: 0.5s;
+            color: white;
+            background-color: rgba(255, 94, 0, 0.712);
+        }
+.inputstyles
+        label {
+            color: white;
+        }
+    </style>
+
+    <script>
+        const bookingForm = document.getElementById('bookingForm');
+        const receipt = document.getElementById('receipt');
+
+        function flightForm() {
+
+
+
+            const departureAirport = document.getElementById('departureAirport').value;
+            const destinationAirport = document.getElementById('destinationAirport').value;
+            const travelDate = document.getElementById('travelDate').value;
+            const passengerName = document.getElementById('passengerName').value;
+            // if (departureAirport && destinationAirport && travelDate && passengerName) {
+            //     document.getElementById('departureInfo').textContent = 'Departure Airport: ' + departureAirport;
+            //     document.getElementById('destinationInfo').textContent = 'Destination Airport: ' + destinationAirport;
+            //     document.getElementById('travelDateInfo').textContent = 'Travel Date: ' + travelDate;
+            //     document.getElementById('passengerInfo').textContent = 'Passenger Name: ' + passengerName;
+
+            // }
+            document.getElementById('departureInfo').textContent = 'Departure Airport: ' + departureAirport;
+            document.getElementById('destinationInfo').textContent = 'Destination Airport: ' + destinationAirport;
+            document.getElementById('travelDateInfo').textContent = 'Travel Date: ' + travelDate;
+            document.getElementById('passengerInfo').textContent = 'Passenger Name: ' + passengerName;
+
+
+            receipt.style.display = 'block';
+        };
+    </script>
+</body>
+
+</html>
